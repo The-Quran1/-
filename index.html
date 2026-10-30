@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>مسجد التقوى بالمليقطه | كتاب تحفيظ القرآن الكريم</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* الإعدادات العامة */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: #f5ead9;
+    color: #4b3022;
+}
+
+/* رأس الموقع */
+
+header {
+    background: linear-gradient(135deg,#382116,#795238,#382116);
+    color: #fff5e6;
+    text-align: center;
+    padding: 45px 15px 85px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "۞";
+    position: absolute;
+    font-size: 250px;
+    opacity: .06;
+    top: -80px;
+    right: 5px;
+}
+
+header::after {
+    content: "۞";
+    position: absolute;
+    font-size: 250px;
+    opacity: .06;
+    bottom: -130px;
+    left: 5px;
+}
+
+/* اسم المسجد المضيء */
+
+.mosque-name {
+    font-size: clamp(35px, 7vw, 68px);
+    font-weight: 900;
+    color: #ffe5a8;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+
+    text-shadow:
+    0 0 8px #e8c27a,
+    0 0 20px #d6a74f,
+    0 0 40px #f5d28b;
+
+    animation:
+    mosqueGlow 2s infinite alternate,
+    mosqueMove 4s ease-in-out infinite;
+}
+
+@keyframes mosqueGlow {
+    from {
+        text-shadow: 0 0 8px #e8c27a;
+    }
+
+    to {
+        text-shadow:
+        0 0 15px #ffe4a3,
+        0 0 30px #e6bd70,
+        0 0 50px #d6a74f;
+    }
+}
+
+@keyframes mosqueMove {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* العنوان */
+
+.logo {
+    font-size: 65px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: #fff2dc;
+    position: relative;
+    z-index: 2;
+}
+
+header p {
+    font-size: 15px;
+    color: #ead7bd;
+    line-height: 2;
+    position: relative;
+    z-index: 2;
+}
+
+.badge {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 9px 28px;
+    border: 1px solid #d9b477;
+    color: #f4dba8;
+    border-radius: 30px;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+}
+
+/* محتوى الموقع */
+
+.container {
+    max-width: 750px;
+    margin: -40px auto 40px;
+    padding: 0 15px;
+    position: relative;
+    z-index: 3;
+}
+
+.card {
+    background: #fffaf1;
+    padding: 35px;
+    border-radius: 22px;
+    box-shadow: 0 10px 40px rgba(76,45,25,.12);
+    border: 1px solid #e8d6bb;
+}
+
+/* عنوان التسجيل */
+
+.section-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.section-title h2 {
+    font-size: 26px;
+    color: #70472e;
+}
+
+.section-title p {
+    color: #94765c;
+    font-size: 14px;
+    margin-top: 7px;
+}
+
+/* رسالة الترحيب */
+
+.welcome {
+    background: #f3e6d2;
+    border-right: 5px solid #a77b48;
+    padding: 20px;
+    border-radius: 12px;
+    line-height: 2.2;
+    font-size: 14px;
+    margin-bottom: 28px;
+    color: #5b4030;
+}
+
+.welcome strong {
+    color: #80552e;
+    font-size: 17px;
+}
+
+/* حقول التسجيل */
+
+label {
+    display: block;
+    font-weight: 800;
+    margin-bottom: 9px;
+    color: #63432d;
+    font-size: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #dfcbb0;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 22px;
+    background: #fffdf8;
+    color: #4b3022;
+    transition: .3s;
+}
+
+input:focus {
+    border-color: #a77b48;
+    box-shadow: 0 0 0 3px rgba(167,123,72,.12);
+}
+
+input::placeholder {
+    color: #b7a48d;
+}
+
+/* معلومات الكتاب */
+
+.info-box {
+    background: #f8edda;
+    border: 1px solid #dfc49b;
+    border-radius: 14px;
+    padding: 20px;
+    margin: 5px 0 25px;
+    line-height: 2.4;
+    font-size: 14px;
+}
+
+.info-box h3 {
+    color: #80552e;
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.info-box p {
+    color: #604632;
+}
+
+/* زر التسجيل */
+
+.submit-btn {
+    width: 100%;
+    border: none;
+    background: linear-gradient(135deg,#795033,#422719);
+    color: #fff4df;
+    padding: 18px;
+    border-radius: 13px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px #79503350;
+}
+
+.whatsapp {
+    text-align: center;
+    margin-top: 18px;
+    color: #94765c;
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* تذييل الموقع */
+
+footer {
+    text-align: center;
+    padding: 35px 15px;
+    background: #382116;
+    color: #fff0dc;
+    line-height: 2.5;
+}
+
+footer h3 {
+    color: #f4dba8;
+    font-size: 23px;
+}
+
+footer strong {
+    color: #e8c27a;
+    font-size: 17px;
+}
+
+footer a {
+    color: #e8c27a;
+    text-decoration: none;
+}
+
+/* زر واتساب العائم */
+
+.float-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #25d366;
+    color: white;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px #0003;
+    z-index: 10;
+    transition: .3s;
+}
+
+.float-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* تصميم الموبايل */
+
+@media(max-width:600px) {
+
+    header {
+        padding: 40px 15px 75px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    .mosque-name {
+        font-size: 39px;
+    }
+
+    .card {
+        padding: 23px 18px;
+    }
+
+    .logo {
+        font-size: 55px;
+    }
+
+    .section-title h2 {
+        font-size: 23px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- بداية الموقع -->
+
+<header>
+
+    <div class="mosque-name">
+        مسجد التقوى بالمليقطه
+    </div>
+
+    <div class="logo">📖</div>
+
+    <h1>كتاب تحفيظ القرآن الكريم</h1>
+
+    <p>
+        نزرع في قلوب أبنائنا حب القرآن الكريم،
+        ونساعدهم على حفظ كتاب الله وتعلم آدابه.
+    </p>
+
+    <div class="badge">
+        نور القرآن يضيء حياتنا
+    </div>
+
+</header>
+
+
+<!-- قسم التسجيل -->
+
+<div class="container">
+
+<div class="card">
+
+    <div class="section-title">
+
+        <h2>تسجيل طالب جديد</h2>
+
+        <p>
+            يسعدنا انضمام أبنائنا إلى رحاب القرآن الكريم
+        </p>
+
+    </div>
+
+
+    <!-- رسالة ترحيبية -->
+
+    <div class="welcome">
+
+        <strong>بسم الله الرحمن الرحيم</strong>
+
+        <br>
+
+        خير ما نهديه لأبنائنا هو أن نربط قلوبهم بكتاب الله،
+        فالقرآن نور للقلوب، وطمأنينة للنفوس،
+        وهداية في الدنيا والآخرة.
+
+        ندعوكم لتسجيل أبنائكم في كتاب مسجد التقوى بالمليقطه،
+        لنبدأ معًا رحلة مباركة في حفظ القرآن الكريم
+        وتعلم التلاوة والأخلاق الإسلامية.
+
+        <br>
+
+        <strong>
+            أهل القرآن هم أهل الله وخاصته.
+        </strong>
+
+    </div>
+
+
+    <!-- نموذج بيانات الطالب -->
+
+    <form id="registerForm">
+
+        <label>اسم الطالب بالكامل</label>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="اكتب اسم الطالب بالكامل"
+            required
+        >
+
+        <label>المنطقة</label>
+
+        <input
+            type="text"
+            id="area"
+            placeholder="اكتب اسم المنطقة أو الشارع"
+            required
+        >
+
+        <label>السن</label>
+
+        <input
+            type="number"
+            id="age"
+            placeholder="اكتب عمر الطالب"
+            min="3"
+            max="99"
+            required
+        >
+
+
+        <!-- مواعيد الكتاب والمكان -->
+
+        <div class="info-box">
+
+            <h3>مواعيد ومكان الكتاب</h3>
+
+            <p>
+                موعد الكتاب: بعد صلاة العصر.
+            </p>
+
+            <p>
+                الأيام: يتم تحديدها بعد الزيارة الأولى للكتاب.
+            </p>
+
+            <p>
+                المكان: مسجد التقوى بالمليقطه.
+            </p>
+
+        </div>
+
+
+        <button type="submit" class="submit-btn">
+
+            تسجيل الطالب عبر واتساب
+
+        </button>
+
+    </form>
+
+
+    <div class="whatsapp">
+
+        سيتم إرسال بيانات التسجيل إلى إدارة الكتاب عبر واتساب.
+
+        <br>
+
+        برجاء الضغط على إرسال داخل واتساب لإتمام التسجيل.
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- نهاية الموقع -->
+
+<footer>
+
+    <h3>مسجد التقوى بالمليقطه</h3>
+
+    <p>
+        بالقرآن نحيا، وبالقرآن نرتقي
+    </p>
+
+    <p>
+        نسأل الله أن يجعل أبناءنا من أهل القرآن وخاصته.
+    </p>
+
+    <strong>
+        للتواصل والاستفسار:
+
+        <a href="https://wa.me/201276833993">
+            01276833993
+        </a>
+    </strong>
+
+    <p>
+        جميع الحقوق محفوظة © 2026
+    </p>
+
+</footer>
+
+
+<!-- زر واتساب العائم -->
+
+<a
+    href="https://wa.me/201276833993"
+    class="float-whatsapp"
+    target="_blank"
+    title="تواصل معنا عبر واتساب"
+>
+    ☎
+</a>
+
+
+<!-- كود إرسال التسجيل إلى واتساب -->
+
+<script>
+
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+
+    let area = document.getElementById("area").value.trim();
+
+    let age = document.getElementById("age").value;
+
+    if (!name || !area || !age) {
+
+        alert("من فضلك أكمل جميع البيانات");
+
+        return;
+
+    }
+
+    if (Number(age) < 3 || Number(age) > 99) {
+
+        alert("من فضلك أدخل سنًا صحيحًا");
+
+        return;
+
+    }
+
+    // رسالة واتساب: البيانات المطلوبة فقط
+
+    let message =
+`السلام عليكم ورحمة الله وبركاته
+
+أريد تسجيل ابني في كتاب تحفيظ القرآن الكريم.
+
+بيانات الطالب:
+
+الاسم: ${name}
+
+المنطقة: ${area}
+
+السن: ${age} سنة`;
+
+    // رقم واتساب إدارة الكتاب
+
+    let phone = "201276833993";
+
+    let url = "https://wa.me/" + phone +
+    "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+
+});
+
+</script>
+
+</body>
+</html>
